@@ -9,8 +9,8 @@ interface PostListItemProps {
 
 export default function ListItemPost({ post }: PostListItemProps) {
   return (
-    <>
-      <Link to={`/details/${post.id}`}>
+    <Link to={`/details/${post.id}`}>
+      <div>
         <h3>{post.title}</h3>
         <img
           src={post.image_url}
@@ -20,7 +20,7 @@ export default function ListItemPost({ post }: PostListItemProps) {
             currentTarget.src = missing;
           }}
         />
-      </Link>
-    </>
+      </div>
+    </Link>
   );
 }

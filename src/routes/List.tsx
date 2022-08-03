@@ -15,7 +15,6 @@ export default function List() {
 
   return (
     <div>
-      <Link to="/create/">+ create post</Link>
       {postList.map((post) => (
         <ListItemPost key={post.id} post={post} />
       ))}
