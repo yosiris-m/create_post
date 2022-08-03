@@ -9,7 +9,7 @@ interface PostListItemProps {
 
 export default function ListItemPost({ post }: PostListItemProps) {
   return (
-    <Link to={`/details/${post.id}`}>
+    <Link to={`/posts/details/${post.id}`}>
       <div>
         <h3>{post.title}</h3>
         <img

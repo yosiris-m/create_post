@@ -26,7 +26,7 @@ export default function Edit() {
   const handleSubmit = (title: string, content: string, image: string) => {
     editPost(post.id, title, content, image)
       .then(() => {
-        navigate("/", { replace: true });
+        navigate("/posts/list", { replace: true });
       })
       .catch((error) => {
         console.error(error); // TODO print error

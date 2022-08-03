@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import List from "../src/routes/List";
+import Home from "./routes/Home";
+import Posts from "./routes/Posts";
+import List from "./routes/List";
 import Detail from "./routes/Detail";
 import Create from "./routes/Create";
 import Edit from "./routes/Edit";
@@ -16,11 +17,12 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="/" element={<List />} />
-          <Route path="/details/:id" element={<Detail />} />
-          <Route path="/create/" element={<Create />} />
-          <Route path="/edit/:id" element={<Edit />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/posts" element={<Posts />}>
+          <Route path="/posts/list" element={<List />} />
+          <Route path="/posts/details/:id" element={<Detail />} />
+          <Route path="/posts/create/" element={<Create />} />
+          <Route path="/posts/edit/:id" element={<Edit />} />
         </Route>
       </Routes>
     </BrowserRouter>

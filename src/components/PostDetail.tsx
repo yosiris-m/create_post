@@ -11,7 +11,7 @@ export default function PostDetail({ post }: PostDetailProps) {
   const handleDeletePost = async () => {
     const res = await deletePost(post.id);
     if (res.ok) {
-      navigate("/", { replace: true });
+      navigate("/posts/list", { replace: true });
     } else {
       alert("Unexpected response code deleting post: " + res.statusText);
     }
@@ -19,7 +19,7 @@ export default function PostDetail({ post }: PostDetailProps) {
 
   return (
     <>
-      <Link to="/">Return to list</Link>
+      <Link to="/posts/list">Return to list</Link>
       <h3>{post.title}</h3>
       <img src={post.image_url} alt="city" />
       <p>{post.content}</p>
@@ -28,7 +28,7 @@ export default function PostDetail({ post }: PostDetailProps) {
         Delete
       </button>
 
-      <Link to={`/edit/${post.id}`}>Edit</Link>
+      <Link to={`/posts/edit/${post.id}`}>Edit</Link>
     </>
   );
 }

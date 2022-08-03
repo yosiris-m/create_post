@@ -9,7 +9,7 @@ export default function Create() {
   const handleSubmit = (title: string, content: string, image: string) => {
     createNewPost(title, content, image)
       .then(() => {
-        navigate("/", { replace: true });
+        navigate("/posts/list", { replace: true });
       })
       .catch((error) => {
         console.error(error); // TODO print error
