@@ -27,6 +27,13 @@ export function createNewPost(title: string, content: string, image: string) {
     headers: { "Content-Type": "application/json" },
   });
 }
+
+export function deletePost(id: number): Promise<Response> {
+  return fetch(`${baseUrl}/${id}`, {
+    method: "DELETE",
+  });
+}
+
 export function toUpdatePost(
   id: string,
   title: string,
