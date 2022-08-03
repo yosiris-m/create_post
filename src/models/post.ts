@@ -8,3 +8,9 @@ export interface Post {
   created_at: string;
   updated_at: string;
 }
+
+export interface CratePost {
+  content: string;
+  title: string;
+  image_url: string;
+}

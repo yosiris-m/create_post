@@ -13,7 +13,6 @@ export default function Detail() {
       return;
     }
     getPost(id).then((data) => {
-      console.log("post", data);
       setPost(data);
     });
   }, [id]);
