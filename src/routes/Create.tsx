@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { createNewPost } from "../services/api";
-
-type FormElement = React.FormEvent<HTMLFormElement>;
+import { useNavigate } from "react-router-dom";
+import PostForm from "../components/PostForm";
 
 export default function Create() {
-  const [title, setTitle] = useState<string>("");
-  const [image, setImage] = useState<string>("");
-  const [content, setContent] = useState<string>("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (ev: FormElement) => {
-    ev.preventDefault();
-
+  const handleSubmit = (title: string, content: string, image: string) => {
     createNewPost(title, content, image)
       .then(() => {
-        setTitle("");
-        setImage("");
-        setContent("");
+        navigate("/", { replace: true });
       })
       .catch((error) => {
         console.error(error); // TODO print error
@@ -23,29 +17,9 @@ export default function Create() {
   };
 
   return (
-    <div>
-      <form method="post" onSubmit={handleSubmit}>
-        <h2>Create post</h2>
-        <label>
-          Title
-          <input
-            type="text"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-          />
-        </label>
-        <textarea
-          placeholder="content"
-          value={content}
-          onChange={(event) => setContent(event.target.value)}
-        />
-        <input
-          type="text"
-          value={image}
-          onChange={(event) => setImage(event.target.value)}
-        />
-        <input type="submit" />
-      </form>
-    </div>
+    <>
+      <h2>Create post</h2>
+      <PostForm onSubmit={handleSubmit} />
+    </>
   );
 }
