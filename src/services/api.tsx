@@ -11,10 +11,6 @@ export function getPost(id: string): Promise<Post> {
 }
 
 export function createNewPost(title: string, content: string, image: string) {
-  console.log("title ->", title);
-  console.log("content ->", content);
-  console.log("image ->", image);
-
   const body = {
     title: title,
     content: content,
@@ -34,16 +30,12 @@ export function deletePost(id: number): Promise<Response> {
   });
 }
 
-export function toUpdatePost(
-  id: string,
+export function editPost(
+  id: number,
   title: string,
   content: string,
   image: string
-) {
-  console.log("title ->", title);
-  console.log("content ->", content);
-  console.log("image ->", image);
-
+): Promise<Post> {
   const body = {
     title: title,
     content: content,
@@ -51,8 +43,14 @@ export function toUpdatePost(
   };
 
   return fetch(`${baseUrl}/${id}`, {
-    method: "POST",
+    method: "PUT",
     body: JSON.stringify(body),
     headers: { "Content-Type": "application/json" },
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      alert("Unexpected response code editing post: " + res.statusText);
+    }
   });
 }

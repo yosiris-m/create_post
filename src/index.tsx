@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import List from "../src/routes/List";
 import Detail from "./routes/Detail";
 import Create from "./routes/Create";
+import Edit from "./routes/Edit";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -19,6 +20,7 @@ root.render(
           <Route path="/" element={<List />} />
           <Route path="/details/:id" element={<Detail />} />
           <Route path="/create/" element={<Create />} />
+          <Route path="/edit/:id" element={<Edit />} />
         </Route>
       </Routes>
     </BrowserRouter>

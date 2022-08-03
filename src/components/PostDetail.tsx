@@ -7,7 +7,7 @@ interface PostDetailProps {
 }
 
 export default function PostDetail({ post }: PostDetailProps) {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const handleDeletePost = async () => {
     const res = await deletePost(post.id);
     if (res.ok) {
@@ -27,6 +27,8 @@ export default function PostDetail({ post }: PostDetailProps) {
       <button type="button" onClick={handleDeletePost}>
         Delete
       </button>
+
+      <Link to={`/edit/${post.id}`}>Edit</Link>
     </>
   );
 }

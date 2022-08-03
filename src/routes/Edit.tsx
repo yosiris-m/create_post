@@ -1,21 +1,40 @@
-import React, { useState } from "react";
-import { createNewPost } from "../services/api";
+import React, { useEffect, useState } from "react";
+import { editPost, getPost } from "../services/api";
+import { useNavigate, useParams } from "react-router-dom";
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 
-export default function Create() {
+export default function Edit() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState<string>("");
   const [image, setImage] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const [id, setId] = useState<number>();
+
+  let params = useParams();
+
+  useEffect(() => {
+    if (!params.id) {
+      return;
+    }
+    getPost(params.id).then((data) => {
+      setId(data.id);
+      setTitle(data.title);
+      setImage(data.image_url);
+      setContent(data.content);
+    });
+  }, [params.id]);
+
+  if (!id) {
+    return <div>Loading...</div>;
+  }
 
   const handleSubmit = (ev: FormElement) => {
     ev.preventDefault();
 
-    createNewPost(title, content, image)
+    editPost(id, title, content, image)
       .then(() => {
-        setTitle("");
-        setImage("");
-        setContent("");
+        navigate("/", { replace: true });
       })
       .catch((error) => {
         console.error(error); // TODO print error
@@ -25,7 +44,7 @@ export default function Create() {
   return (
     <div>
       <form method="post" onSubmit={handleSubmit}>
-        <h2>Create post</h2>
+        <h2>Edit post</h2>
         <label>
           Title
           <input
@@ -44,7 +63,7 @@ export default function Create() {
           value={image}
           onChange={(event) => setImage(event.target.value)}
         />
-        <input type="submit" />
+        <button type="submit">Save</button>
       </form>
     </div>
   );
