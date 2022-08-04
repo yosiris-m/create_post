@@ -3,6 +3,7 @@ import { editPost, getPost } from "../services/api";
 import { useNavigate, useParams } from "react-router-dom";
 import PostForm from "../components/PostForm";
 import { Post } from "../models/post";
+import styles from "./Edit.module.css";
 
 export default function Edit() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ export default function Edit() {
   const handleSubmit = (title: string, content: string, image: string) => {
     editPost(post.id, title, content, image)
       .then(() => {
-        navigate("/posts/list", { replace: true });
+        navigate(`/details/${post.id}`, { replace: true });
       })
       .catch((error) => {
         console.error(error); // TODO print error
@@ -34,7 +35,7 @@ export default function Edit() {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>Edit post</h2>
       <PostForm onSubmit={handleSubmit} post={post} />
     </div>

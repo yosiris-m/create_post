@@ -7,5 +7,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5rem;
-  background-color: rgba(235, 211, 186, 0.616);
+  background-color: #ebedf5;
+}
+
+a {
+  text-decoration: none;
+  color: #0d609d;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #2f86c7;
+}
+
+button, .button {
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: white;
+  border: none;
+  height: 2rem;
+  padding: 0 1rem;
+  background-color: #2f86c7;
+  line-height: 2rem;
+}
+
+
+button, .button:hover {
+  background-color: #2b99ea;
+  text-decoration: none;
+  color: #fff;
 }

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./routes/Home";
 import Posts from "./routes/Posts";
 import List from "./routes/List";
 import Detail from "./routes/Detail";
@@ -17,12 +16,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/posts" element={<Posts />}>
-          <Route path="/posts/list" element={<List />} />
-          <Route path="/posts/details/:id" element={<Detail />} />
-          <Route path="/posts/create/" element={<Create />} />
-          <Route path="/posts/edit/:id" element={<Edit />} />
+        <Route path="/" element={<Posts />}>
+          <Route path="/" element={<List />} />
+          <Route path="/details/:id" element={<Detail />} />
+          <Route path="/create/" element={<Create />} />
+          <Route path="/edit/:id" element={<Edit />} />
         </Route>
       </Routes>
     </BrowserRouter>

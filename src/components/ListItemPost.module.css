@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+}
+
+.container:hover {
+    box-shadow: -2px 0 10px 1px rgba(0,0,0,0.20)
+}
+
+
+.picture {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    padding-top: 0.6rem;
+}
+
+
+@media all and (min-width: 768px) {
+    .picture {
+        width: 14rem;
+        height: 14rem;
+        margin: 0 1rem ;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .picture {
+        width: 17rem;
+        height: 17rem;
+        margin: 0 2rem ;
+    }
+}
+
+.title {
+    padding: 0.5rem 0 1rem 0;
+}

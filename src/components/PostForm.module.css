@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    position: relative;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.btnCancel {
+    background-color: #cccccc;
+    color: #4d4b4b;
+    margin-right: 1rem;
+}

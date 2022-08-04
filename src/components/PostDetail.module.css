@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    width: 90rem;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+}
+
+.returnBox {
+    width: 90rem;
+    padding-bottom: 2rem;
+}
+
+.deleteBtn {
+    color: #0d609d;
+    cursor: pointer;
+    font-size: 1.1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.deleteBtn:hover {
+    text-decoration: underline;
+    color: #52adfa;
+}
+
+.picture {
+    width: 40rem;
+    margin-right: 2rem;
+}
