@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Posts from "./routes/Posts";
+import App from "./routes/App";
 import List from "./routes/List";
 import Detail from "./routes/Detail";
 import Create from "./routes/Create";
@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Posts />}>
+        <Route path="/" element={<App />}>
           <Route path="/" element={<List />} />
           <Route path="/details/:id" element={<Detail />} />
           <Route path="/create/" element={<Create />} />

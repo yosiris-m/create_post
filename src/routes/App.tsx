@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import styles from "./Posts.module.css";
+import styles from "./App.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-function Posts() {
+function App() {
   return (
     <>
       <header className={styles.header}>
@@ -25,4 +25,4 @@ function Posts() {
   );
 }
 
-export default Posts;
+export default App;

@@ -35,6 +35,8 @@ export default function PostForm({ onSubmit, post }: PostFormProps) {
       <div className={styles.formRow}>
         <label>Title</label>
         <input
+          placeholder="Costa Dorada"
+          className={styles.inputTitle}
           required
           type="text"
           value={title}
@@ -44,17 +46,20 @@ export default function PostForm({ onSubmit, post }: PostFormProps) {
       <div className={styles.formRow}>
         <label>Content</label>
         <textarea
+          className={styles.inputContent}
           required
-          placeholder="content"
+          placeholder="The Costa Dorada is located in the south of Cataluña, Spain"
           value={content}
           onChange={(event) => setContent(event.target.value)}
         />
       </div>
       <div className={styles.formRow}>
-        <label>Image</label>
+        <label>Url image</label>
         <input
+          placeholder="https://www.example.com/image.png"
+          className={styles.inputUrl}
           required
-          type="text"
+          type="url"
           value={image}
           onChange={(event) => setImage(event.target.value)}
         />

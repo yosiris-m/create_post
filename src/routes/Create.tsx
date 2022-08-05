@@ -19,7 +19,7 @@ export default function Create() {
 
   return (
     <div className={styles.container}>
-      <h2>Create post</h2>
+      <h3>Create new post</h3>
       <PostForm onSubmit={handleSubmit} />
     </div>
   );

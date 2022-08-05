@@ -13,6 +13,22 @@
     margin-bottom: 2rem;
 }
 
+.inputTitle {
+    padding: 1rem;
+}
+
+
+.inputContent {
+    height: 8rem;
+    padding: 1rem;
+}
+
+
+ .inputUrl {
+    padding: 0.8rem;
+ }
+
+
 .buttons {
     display: flex;
     flex-direction: row;

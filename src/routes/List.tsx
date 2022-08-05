@@ -29,10 +29,13 @@ export default function List() {
 
   if (postList.length === 0) {
     return (
-      <div>
-        <img src={noPostsImg} alt="Samana beach" />
-        <p>Welcome to travel blog, a place to view and share your travels.</p>
-        <Link to="/create">Create the first post</Link>
+      <div className={styles.box}>
+        <p>Welcome to travel blog, a place to view and share your travels</p>
+        <p>there are currently no post created.</p>
+        <Link to="/create" className={styles.linkNewPost}>
+          Create the first post
+        </Link>
+        <img className={styles.image} src={noPostsImg} alt="Samana beach" />
       </div>
     );
   }
