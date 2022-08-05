@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/travel_blog/static/css/main.324978d3.css",
+    "main.js": "/travel_blog/static/js/main.f362f4dc.js",
+    "static/js/787.28cb0dcd.chunk.js": "/travel_blog/static/js/787.28cb0dcd.chunk.js",
+    "static/media/samana_picture.png": "/travel_blog/static/media/samana_picture.43e195b277f0c97004d2.png",
+    "static/media/generic_image.jpeg": "/travel_blog/static/media/generic_image.b48fe2d01ee7222c8dec.jpeg",
+    "index.html": "/travel_blog/index.html",
+    "main.324978d3.css.map": "/travel_blog/static/css/main.324978d3.css.map",
+    "main.f362f4dc.js.map": "/travel_blog/static/js/main.f362f4dc.js.map",
+    "787.28cb0dcd.chunk.js.map": "/travel_blog/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.324978d3.css",
+    "static/js/main.f362f4dc.js"
+  ]
+}
