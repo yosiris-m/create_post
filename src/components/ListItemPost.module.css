@@ -23,8 +23,8 @@
 
 @media all and (min-width: 768px) {
     .picture {
-        width: 14rem;
-        height: 14rem;
+        width: 12rem;
+        height: 12rem;
         margin: 0 1rem ;
     }
 }

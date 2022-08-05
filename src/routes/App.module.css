@@ -8,27 +8,42 @@
     flex-direction: row;
     justify-content: center;
     border-bottom: 1px solid #ccc;
+    height: 10rem;
 }
 
 .box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: 90rem;
     padding: 0 1rem 1rem 1rem;
 }
 
-.main {
-    margin-top: 9rem;
-}
-
 .title {
     color: #0d609d;
+}
+
+.main {
+    margin-top: 10rem;
 }
 
 .boxCreatePost {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media all and (min-width: 768px) {
+    .header {
+        height: 6rem;
+    }
+
+    .main {
+        margin-top: 6rem;
+    }
+
+    .box {
+        flex-direction: row;
+    }
 }
